@@ -1,0 +1,193 @@
+
+texture.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,MipMapLinearLinear
+repeat: none
+achievements_disable
+  rotate: false
+  xy: 516, 1042
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+arrow
+  rotate: false
+  xy: 2, 528
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+effect
+  rotate: false
+  xy: 1030, 1042
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+pixel
+  rotate: false
+  xy: 2, 2
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+play_games_on
+  rotate: false
+  xy: 2, 1042
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+privacy
+  rotate: false
+  xy: 516, 528
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+restart
+  rotate: false
+  xy: 2, 14
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+screenshot
+  rotate: false
+  xy: 1030, 14
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 516, 14
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+swap
+  rotate: false
+  xy: 1030, 528
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+
+texture2.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,MipMapLinearLinear
+repeat: none
+achievements
+  rotate: false
+  xy: 516, 516
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+donut
+  rotate: false
+  xy: 2, 2
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+logo
+  rotate: false
+  xy: 1030, 516
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+music
+  rotate: false
+  xy: 1030, 1030
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+mute
+  rotate: false
+  xy: 2, 1030
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+play_games_off
+  rotate: false
+  xy: 516, 2
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+sound
+  rotate: false
+  xy: 2, 516
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+tile
+  rotate: false
+  xy: 1030, 2
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+tutorial
+  rotate: false
+  xy: 516, 1030
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+
+texture3.png
+size: 2048,2048
+format: RGBA8888
+filter: MipMapLinearLinear,MipMapLinearLinear
+repeat: none
+close
+  rotate: false
+  xy: 516, 516
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+option
+  rotate: false
+  xy: 516, 1030
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+rule
+  rotate: false
+  xy: 1030, 1030
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+shop
+  rotate: false
+  xy: 2, 2
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+spiral
+  rotate: false
+  xy: 2, 516
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+undo
+  rotate: false
+  xy: 2, 1030
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1

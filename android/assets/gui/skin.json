@@ -1,0 +1,55 @@
+{
+  "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
+    "close": {
+      "up": "close"
+    },
+    "restart": {
+      "up": "restart"
+    },
+    "swap": {
+      "up": "swap"
+    },
+    "achievements": {
+      "up": "achievements",
+      "disabled": "achievements_disable"
+    },
+    "option": {
+      "up": "option"
+    },
+    "sound": {
+      "up": "sound"
+    },
+    "effect": {
+      "up": "effect"
+    },
+    "music": {
+      "up": "music"
+    },
+    "mute": {
+      "up": "mute"
+    },
+    "undo": {
+      "up": "undo"
+    },
+    "screenshot": {
+      "up": "screenshot"
+    },
+    "googlePlayOn": {
+      "up": "play_games_on"
+    },
+    "googlePlayOff": {
+      "up": "play_games_off"
+    },
+    "shop": {
+      "up": "shop"
+    },
+    "privacy": {
+      "up": "privacy"
+    }
+  },
+  "com.badlogic.gdx.scenes.scene2d.ui.ImageButton$ImageButtonStyle": {
+    "arrow": {
+      "up": "arrow"
+    }
+  }
+}

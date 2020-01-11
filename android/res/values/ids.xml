@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_id_paly">523402154913</string>
+    <string name="iron_source_app_id">a9d36bfd</string>
+    <string name="app_id_admob">ca-app-pub-5465553338697908~7284813710</string>
+    <string name="app_id_adcolony">app3a0e159b279242b2ab</string>
+    <string name="adcolony_zone_id_1">vz211c119fe55a4c3c95</string>
+    <string name="ad_unit_video_id">ca-app-pub-5465553338697908/8088816779</string>
+    <string name="ad_unit_interstitial_id">ca-app-pub-5465553338697908/1906551806</string>
+    <string name="client_id">523402154913-b2b4v3d430b3vuoojkrmu0f28a2p2059.apps.googleusercontent.com</string>
+    <string name="billing_licence_key">
+        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAthF1vR9MWWhBX02jz6vzkCtqmTFKacM0xKmShxLTww+LKnafQq3LMLkUc52nePkjsZLJGA/aCFyuXjlpgRFg6A1tvMIVEAvMLOucLXqVCAyMZ9qrGADUEnYGule+c2G0R/r8soPL4eav9eUQOQVBqxVn47HLBod4Wqqg8JAMpY9RkOaKV0Mo1Vc/q041OvQ+xR9MHruhFaXqahDlVlwIhtVMGoww41cC5aNHY6UaEjEJeSVBVEtbvn6o97A9lwnFmUHCb5cxbu+qQoevMkYEQvs1n3371M1Rf5cEElRig+KnlgQssQj17r7wYhB7UVCAVtNHMJ117lB8Fi27XLAaRwIDAQAB
+    </string>
+</resources>

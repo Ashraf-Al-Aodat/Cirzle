@@ -1,0 +1,104 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+-verbose
+
+-dontwarn android.support.**
+-dontwarn com.badlogic.gdx.backends.android.AndroidFragmentApplication
+-dontwarn com.badlogic.gdx.utils.GdxBuild
+-dontwarn com.badlogic.gdx.physics.box2d.utils.Box2DBuild
+-dontwarn com.badlogic.gdx.jnigen.BuildTarget*
+-dontwarn com.badlogic.gdx.graphics.g2d.freetype.FreetypeBuild
+
+-keep class pl.mk5.gdx.fireapp.**{*;}
+-keepattributes Signature
+-keepattributes *Annotation*
+
+# Keep all POJO objects which you had used as Database models.
+#-keepclassmembers class com.yourcompany.models.** {*;}
+-keepclassmembers class co.circlewave.models.** {*;}
+
+-keep class com.badlogic.gdx.controllers.android.AndroidControllers
+
+-keepclassmembers class com.badlogic.gdx.backends.android.AndroidInput* {
+   <init>(com.badlogic.gdx.Application, android.content.Context, java.lang.Object, com.badlogic.gdx.backends.android.AndroidApplicationConfiguration);
+}
+
+# For communication with AdColony's WebView
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+# Keep ADCNative class members unobfuscated
+-keepclassmembers class com.adcolony.sdk.ADCNative** {
+    *;
+ }
+
+ # Keep filenames and line numbers for stack traces
+ -keepattributes SourceFile,LineNumberTable
+ # Keep JavascriptInterface for WebView bridge
+ -keepattributes JavascriptInterface
+ # Sometimes keepattributes is not enough to keep annotations
+ -keep class android.webkit.JavascriptInterface {
+    *;
+ }
+ # Keep all classes in Unity Ads package
+ -keep class com.unity3d.ads.** {
+    *;
+ }
+ # Keep all classes in Unity Services package
+ -keep class com.unity3d.services.** {
+    *;
+ }
+ -dontwarn com.google.ar.core.**
+ -dontwarn com.unity3d.services.**
+ -dontwarn com.ironsource.adapters.unityads.**
+
+# Ironsource ads.
+
+-keepclassmembers class com.ironsource.sdk.controller.IronSourceWebView$JSInterface {
+    public *;
+}
+-keepclassmembers class * implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+-keep public class com.google.android.gms.ads.** {
+   public *;
+}
+-keep class com.ironsource.adapters.** { *;
+}
+-dontwarn com.ironsource.mediationsdk.**
+-dontwarn com.ironsource.adapters.**
+-dontwarn com.moat.**
+-keep class com.moat.** { public protected private *; }
+
+#
+
+-keep class com.android.vending.billing.**
+
+-keepclassmembers class com.badlogic.gdx.physics.box2d.World {
+   boolean contactFilter(long, long);
+   void    beginContact(long);
+   void    endContact(long);
+   void    preSolve(long, long);
+   void    postSolve(long, long);
+   boolean reportFixture(long);
+   float   reportRayFixture(long, float, float, float, float, float);
+}
