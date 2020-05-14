@@ -1,6 +1,5 @@
 package co.circlewave.cirzle.board;
 
-import co.circlewave.cirzle.Game;
 import co.circlewave.cirzle.board.component.Piece;
 import co.circlewave.cirzle.board.component.Sign;
 
@@ -9,17 +8,14 @@ import java.util.ArrayList;
 public class PathFinder {
 
     private final Sign sign;
-    private final ArrayList<Node<Piece>> realPath;
-    private final ArrayList<Node<Piece>> fakePath;
 
-    private boolean type;
+    private Node<Piece> lastNode;
+
 
     PathFinder(final Sign sign) {
         this.sign = sign;
-        this.realPath = new ArrayList<>();
-        this.fakePath = new ArrayList<>();
-        this.type = false;
-        findChildren(new Node<>(sign.getTile().getPiece(), null));
+        lastNode = new Node<>(sign.getTile().getPiece(), null);
+        findChildren(lastNode);
     }
 
     private void findChildren(final Node<Piece> node) {
@@ -27,17 +23,20 @@ public class PathFinder {
         final ArrayList<Piece> pieces = node.getData().pieceEffect(node.hasParent() ? node.getParent().getData() : null);
         for (final Piece piece : pieces) {
             childNode = new Node<>(piece, node);
-            if (!pathContainsNode(childNode)) {
+            if (!pathContainsNode(childNode) && !childNode.getData().isLinked()) {
                 node.addChild(childNode);
             }
         }
+
+        if(chickIfDifferentSign(node) && lastNode.getBranchSize() <= node.getBranchSize()){
+            lastNode = node;
+        } else if(!chickIfDifferentSign(lastNode) && node.getChildren().isEmpty() &&
+                lastNode.getBranchSize() <= node.getBranchSize()){
+            lastNode = node;
+        }
+
         for (final Node<Piece> child : node.getChildren()) {
             findChildren(child);
-        }
-        if (chickIfDifferentSign(node)) {
-            realPath.add(node);
-        } else if (node.getChildren().isEmpty()) {
-            fakePath.add(node);
         }
     }
 
@@ -58,32 +57,19 @@ public class PathFinder {
     }
 
     public boolean getType() {
-        return type;
+        return chickIfDifferentSign(lastNode);
     }
 
     Node<Piece> getData() {
-        Game.print("P: " + sign.getTile().getTileId());
-        if (!realPath.isEmpty()) {
-            type = true;
-            return getDeepestNode(realPath);
-        } else if (!fakePath.isEmpty()) {
-            type = false;
-            Game.print("f");
-            return getDeepestNode(fakePath);
-        } else {
-            return new Node<>(sign.getTile().getPiece(), null);
+        Node<Piece> closestNode = lastNode;
+        while (closestNode.hasParent()){
+            closestNode = closestNode.getParent();
+            if(chickIfDifferentSign(closestNode)){
+                lastNode = closestNode;
+            }
         }
+        return lastNode;
     }
-
-    private Node<Piece> getDeepestNode(final ArrayList<Node<Piece>> path) {
-        Node<Piece> deepestNode = path.get(0);
-        for (int index = 1; index < path.size(); index++) {
-            if (deepestNode.getBranchSize() < path.get(index).getBranchSize())
-                deepestNode = path.get(index);
-        }
-        return deepestNode;
-    }
-
 
     public class Node<T> {
 

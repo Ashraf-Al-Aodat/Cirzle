@@ -358,11 +358,7 @@ public class PlayScene extends Group {
                                         Gdx.graphics.getHeight() - Gdx.input.getY() - board.getY(),
                                         Align.center);
                                 for (final Piece piece : board.getAllPieces()) {
-                                    if (piece.getTile().isTouch()) {
-                                        piece.getTile().setHovering(true);
-                                    } else {
-                                        piece.getTile().setHovering(false);
-                                    }
+                                    piece.getTile().setHovering(piece.getTile().isTouch());
                                 }
                             }
                         } else {
@@ -377,11 +373,7 @@ public class PlayScene extends Group {
                             }
                         }
                         for (final Piece piece : board.getAllPieces()) {
-                            if (piece.getTile().isTouch(sourceTile.getPiece())) {
-                                piece.getTile().setHovering(true);
-                            } else {
-                                piece.getTile().setHovering(false);
-                            }
+                            piece.getTile().setHovering(piece.getTile().isTouch(sourceTile.getPiece()));
                         }
                     }
                 }
@@ -411,7 +403,11 @@ public class PlayScene extends Group {
                     }
                     board.unTouch();
                     sourceTile = null;
-                    board.checkSign();
+                    if (Gdx.input.getX() > board.getX() && Gdx.input.getX() < board.getX() + board.getWidth() &&
+                            (Gdx.graphics.getHeight() - Gdx.input.getY()) > board.getY() &&
+                            (Gdx.graphics.getHeight() - Gdx.input.getY()) < board.getY() + board.getHeight()) {
+                        board.checkSign();
+                    }
                     if (board.win()) {
                         winAnimation();
                     }
@@ -905,9 +901,7 @@ public class PlayScene extends Group {
             final Label.LabelStyle style = new Label.LabelStyle();
             style.font = game.getAssets().getFont(Assets.BOLD);
             style.fontColor = Color.WHITE;
-            final Label label = new Label("A new level(s) every week \n\n" +
-                    "And " + game.getServicesManager().calculateRemainingDaysUntilUpdate() + " remaining" +
-                    "\n\nfor the next update.", style);
+            final Label label = new Label("Coming Soon", style);
             label.setAlignment(Align.center);
             label.setPosition(getWidth(), getHeight() / 2 - label.getPrefHeight() / 2);
             label.setName("every week update");

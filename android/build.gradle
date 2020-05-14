@@ -1,20 +1,20 @@
 android {
     signingConfigs {
         debug {
-            keyAlias 'cirzledebug'
+            keyAlias 'cirzle'
             keyPassword '1slhx7890'
-            storeFile file('/home/ashraf/Dev/Keys/googleplay.jks')
+            storeFile file('/home/ashraf/Game Development/Keys.jks')
             storePassword '1slhx7890'
         }
         release {
-            keyAlias 'cirzlerelease '
+            keyAlias 'cirzle'
             keyPassword '1slhx7890'
-            storeFile file('/home/ashraf/Dev/Keys/googleplay.jks')
+            storeFile file('/home/ashraf/Game Development/Keys.jks')
             storePassword '1slhx7890'
         }
     }
     buildToolsVersion "28.0.3"
-    compileSdkVersion 28
+    compileSdkVersion 29
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -33,7 +33,7 @@ android {
     defaultConfig {
         applicationId "co.circlewave.cirzle"
         minSdkVersion 16
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 20
         versionName "1.2.3"
         multiDexEnabled true

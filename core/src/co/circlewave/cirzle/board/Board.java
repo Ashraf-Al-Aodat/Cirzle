@@ -1,5 +1,6 @@
 package co.circlewave.cirzle.board;
 
+import co.circlewave.cirzle.Game;
 import co.circlewave.cirzle.board.component.ConvertPiece;
 import co.circlewave.cirzle.board.component.Piece;
 import co.circlewave.cirzle.board.component.PortalPiece;
@@ -100,6 +101,7 @@ public final class Board extends Group {
             PathFinder.Node<Piece> node = pathFinder.getData();
             if (node != null) {
                 sign.link();
+                if (node.getData().getTile().hasASign()) node.getData().getTile().getSign().link();
                 path.add(node.getData());
                 while (node.hasParent()) {
                     if (!(node.getParent().getData() instanceof PortalPiece) || !(node.getData() instanceof PortalPiece)) {
@@ -115,7 +117,7 @@ public final class Board extends Group {
                     node = node.getParent();
                     path.add(node.getData());
                 }
-                if (node.getData().getTile().hasASign()) node.getData().getTile().getSign().link();
+                if (pathFinder.getType()) node.getData().enableLink();
             }
             paths.add(path);
         }
